@@ -32,3 +32,4 @@ cscope.out
 .sconsign.dblite
 configure.conf
 
+.idea/
