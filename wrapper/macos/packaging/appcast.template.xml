@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <channel>
-      <title>SunPinyin Changelog</title>
+      <title>laipinyin Changelog</title>
       <link>{{ link }}</link>
-      <description>Most recent changes with links to SunPinyin updates.</description>
+      <description>Most recent changes with links to laipinyin updates.</description>
       <language>en</language>      
         <item>
             <title>Version {{ version }}</title>

@@ -40,7 +40,7 @@
 
 // Each input method needs a unique connection name.
 // Note that periods and spaces are not allowed in the connection name.
-const NSString *kConnectionName = @"SunPinyin_1_Connection";
+const NSString *kConnectionName = @"laipinyin_1_Connection";
 
 int main(int argc, char *argv[])
 {

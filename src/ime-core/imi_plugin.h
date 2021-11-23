@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef _SUNPINYIN_IMI_PLUGIN_H
-#define _SUNPINYIN_IMI_PLUGIN_H
+#ifndef _laipinyin_IMI_PLUGIN_H
+#define _laipinyin_IMI_PLUGIN_H
 
 #include <string>
 #include <vector>

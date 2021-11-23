@@ -65,7 +65,7 @@ CSimplifiedChinesePolicy::loadResources()
         return m_bLoaded;
 
     bool suc = true;
-    std::string data_dir = m_data_dir.size() ? m_data_dir : SUNPINYIN_DATA_DIR;
+    std::string data_dir = m_data_dir.size() ? m_data_dir : laipinyin_DATA_DIR;
     std::string lm_path = data_dir + "/lm_sc.t3g";
     std::string dict_path = data_dir + "/pydict_sc.bin";
 
@@ -78,7 +78,7 @@ CSimplifiedChinesePolicy::loadResources()
                  sizeof(path),
                  "%s/%s",
                  home,
-                 SUNPINYIN_USERDATA_DIR_PREFIX);
+                 laipinyin_USERDATA_DIR_PREFIX);
         m_user_data_dir = path;
     }
 

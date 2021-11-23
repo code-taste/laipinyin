@@ -36,7 +36,7 @@
 #ifndef IMI_SCIMWIN_H
 #define IMI_SCIMWIN_H
 
-#include "sunpinyin_lookup_table.h"
+#include "laipinyin_lookup_table.h"
 #include "imi_winHandler.h"
 
 class SunPyInstance;

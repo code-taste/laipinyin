@@ -8,30 +8,30 @@ def get_userdict_path ():
     homedir = os.environ.get("HOME")
 
     if sys.platform == "darwin":
-        return homedir+"/Library/Application Support/SunPinyin/userdict"
+        return homedir+"/Library/Application Support/laipinyin/userdict"
 
     # FIXME: not sure how to get the ibus version or wrapper type (xim or ibus)
-    if os.path.exists (homedir+"/.cache/ibus/sunpinyin"):
-        return homedir+"/.cache/ibus/sunpinyin/userdict"
+    if os.path.exists (homedir+"/.cache/ibus/laipinyin"):
+        return homedir+"/.cache/ibus/laipinyin/userdict"
         
-    if os.path.exists (homedir+"/.ibus/sunpinyin"):
-        return homedir+"/.ibus/sunpinyin/userdict"
+    if os.path.exists (homedir+"/.ibus/laipinyin"):
+        return homedir+"/.ibus/laipinyin/userdict"
     
-    if os.path.exists (homedir+"/.sunpinyin"):
-        return homedir+"/.sunpinyin/userdict"
+    if os.path.exists (homedir+"/.laipinyin"):
+        return homedir+"/.laipinyin/userdict"
 
-    raise "Can not detect sunpinyin's userdict!"
+    raise "Can not detect laipinyin's userdict!"
 
 def get_sysdict_path ():
     if sys.platform == "darwin":
         homedir = os.environ.get("HOME")
-        sysdict_path = "/Library/Input Methods/SunPinyin.app/Contents/Resources/pydict_sc.bin"
+        sysdict_path = "/Library/Input Methods/laipinyin.app/Contents/Resources/pydict_sc.bin"
         if os.path.exists (homedir + sysdict_path):
             return homedir + sysdict_path
         else:
             return sysdict_path
 
-    return "/usr/lib/sunpinyin/data/pydict_sc.bin"
+    return "/usr/lib/laipinyin/data/pydict_sc.bin"
 
 def load_system_dict ():
     sysdict_path = get_sysdict_path ()
@@ -51,7 +51,7 @@ def load_system_dict ():
     f.close()
     return words
 
-def import_to_sunpinyin_user_dict (records, userdict_path=''):
+def import_to_laipinyin_user_dict (records, userdict_path=''):
     userdict_path = userdict_path if userdict_path else get_userdict_path()
     db = sqlite.connect (userdict_path)
 
@@ -76,11 +76,11 @@ def import_to_sunpinyin_user_dict (records, userdict_path=''):
             continue
 
         if len (syllables) < 2 or len (syllables) > 6:
-            print("[%s] is too long or too short for sunpinyin userdict" % utf8str)
+            print("[%s] is too long or too short for laipinyin userdict" % utf8str)
             continue
 
         if utf8str in sysdict:
-            #print("[%s] is already in sunpinyin's sysdict" % utf8str)
+            #print("[%s] is already in laipinyin's sysdict" % utf8str)
             continue
 
         record = [0]*14
@@ -102,7 +102,7 @@ def import_to_sunpinyin_user_dict (records, userdict_path=''):
                     """
             try:
                 db.execute (sqlstring, record)
-                #print("[%s] is imported into sunpinyin's userdict" % utf8str)
+                #print("[%s] is imported into laipinyin's userdict" % utf8str)
 
                 batch_count += 1
                 if batch_count == 100:
@@ -110,13 +110,13 @@ def import_to_sunpinyin_user_dict (records, userdict_path=''):
                     batch_count = 0
 
             except:
-                #print("[%s] is already in sunpinyin's userdict" % utf8str)
+                #print("[%s] is already in laipinyin's userdict" % utf8str)
                 pass
 
     db.commit()
     db.close()
 
-def export_sunpinyin_user_dict (userdict_path=''):
+def export_laipinyin_user_dict (userdict_path=''):
     userdict_path = userdict_path if userdict_path else get_userdict_path()
     db = sqlite.connect (userdict_path)
 
@@ -133,6 +133,6 @@ def export_sunpinyin_user_dict (userdict_path=''):
         print(str.encode ('UTF-8'), id, "'".join(syls))
         
 if __name__ == "__main__":
-    export_sunpinyin_user_dict ()
+    export_laipinyin_user_dict ()
 
 # -*- indent-tabs-mode: nil -*- vim:et:ts=4

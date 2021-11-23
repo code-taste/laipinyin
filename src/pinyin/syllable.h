@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef __SUNPINYIN_SYLLABLE_H__
-#define __SUNPINYIN_SYLLABLE_H__
+#ifndef __laipinyin_SYLLABLE_H__
+#define __laipinyin_SYLLABLE_H__
 
 #include <vector>
 #include <string>

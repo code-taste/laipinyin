@@ -1,6 +1,6 @@
 // -*- mode: c++ -*-
-#ifndef __SUNPINYIN_PYTRIE_H__
-#define __SUNPINYIN_PYTRIE_H__
+#ifndef __laipinyin_PYTRIE_H__
+#define __laipinyin_PYTRIE_H__
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -162,6 +162,6 @@ protected:
     print(const TNode* pRoot, std::string& prefix, FILE *fp) const;
 };
 
-#endif /* __SUNPINYIN_PYTRIE_H__*/
+#endif /* __laipinyin_PYTRIE_H__*/
 
 // -*- indent-tabs-mode: nil -*- vim:et:ts=4

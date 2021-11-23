@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef _SUNPINYIN_CONTEXT_HISTORY_H
-#define _SUNPINYIN_CONTEXT_HISTORY_H
+#ifndef _laipinyin_CONTEXT_HISTORY_H
+#define _laipinyin_CONTEXT_HISTORY_H
 
 #include "portability.h"
 

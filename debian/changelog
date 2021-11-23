@@ -1,27 +1,27 @@
-sunpinyin (2.0.2~git20100607-1) unstable; urgency=low
+laipinyin (2.0.2~git20100607-1) unstable; urgency=low
 
   * bump the upstream version for later release
 
  -- Mike <mikeandmore@gmail.com>  Mon, 07 Jun 2010 21:00:52 +0800
 
-sunpinyin (2.0.1-1) unstable; urgency=low
+laipinyin (2.0.1-1) unstable; urgency=low
 
   * first upload to official Debian archives (Closes: 478811)
   * new upstream version
 
  -- Kov Chai <tchaikov@gmail.com>  Mon, 05 Apr 2010 18:40:48 +0800
 
-sunpinyin (2.0-4) unstable; urgency=low
+laipinyin (2.0-4) unstable; urgency=low
 
   * debian/copyright
     - add CC-BY-SA license
     - specify the version of GPL
   * use debian 3.0 (quilt) format
-  * correct the xsunpinyin's overrides file
+  * correct the xlaipinyin's overrides file
 
  -- Kov Chai <tchaikov@gmail.com>  Sun, 04 Apr 2010 19:41:02 +0800
 
-sunpinyin (2.0-3) unstable; urgency=low
+laipinyin (2.0-3) unstable; urgency=low
 
   * update debian/copyright
   * add debian/watch
@@ -31,29 +31,29 @@ sunpinyin (2.0-3) unstable; urgency=low
 
  -- Kov Chai <tchaikov@gmail.com>  Tue, 23 Mar 2010 00:47:41 +0800
 
-sunpinyin (2.0-2) unstable; urgency=low
+laipinyin (2.0-2) unstable; urgency=low
 
   * fix a typo
 
  -- Mike <mikeandmore@gmail.com>  Mon, 22 Feb 2010 23:27:43 -0800
 
-sunpinyin (2.0-1) unstable; urgency=low
+laipinyin (2.0-1) unstable; urgency=low
 
   * 2.0 final release
 
  -- Mike <mikeandmore@gmail.com>  Mon, 22 Feb 2010 19:31:25 -0800
 
-sunpinyin (2.0~hg20091111-1) unstable; urgency=low
+laipinyin (2.0~hg20091111-1) unstable; urgency=low
 
   * Initial release
   * release language model as plain text format
 
  -- Kov Chai <tchaikov@gmail.com>  Fri, 13 Nov 2009 00:10:46 +0800
 
-sunpinyin (1.0~hg20080607-2) unstable; urgency=low
+laipinyin (1.0~hg20080607-2) unstable; urgency=low
 
   * Update README.Debian with notes on language model training
-  * Add explanation about data files shipped with sunpinyin
+  * Add explanation about data files shipped with laipinyin
 
  -- Kov Chai <tchaikov@gmail.com>  Sat, 12 Jul 2008 20:21:06 +0800
 

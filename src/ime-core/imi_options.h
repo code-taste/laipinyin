@@ -51,8 +51,8 @@
 #include "pinyin/shuangpin_seg.h"
 #include "pinyin/hunpin_seg.h"
 
-#ifndef SUNPINYIN_USERDATA_DIR_PREFIX
-#define SUNPINYIN_USERDATA_DIR_PREFIX ".sunpinyin"
+#ifndef laipinyin_USERDATA_DIR_PREFIX
+#define laipinyin_USERDATA_DIR_PREFIX ".laipinyin"
 #endif
 
 struct CSimplifiedChinesePolicy : public IConfigurable {
@@ -230,18 +230,18 @@ protected: ~CClassicStylePolicy () {}
 
 typedef SingletonHolder<CClassicStylePolicy> AClassicStylePolicy;
 
-struct ISunpinyinProfile {
+struct IlaipinyinProfile {
     virtual CIMIView* createProfile() = 0;
     virtual void destroyProfile(CIMIView *) = 0;
-    virtual ~ISunpinyinProfile () {};
+    virtual ~IlaipinyinProfile () {};
 };
 
 template <class LanguagePolicy, class PinyinSchemePolicy,
           class InputStylePolicy>
-class CSunpinyinProfile : public ISunpinyinProfile
+class ClaipinyinProfile : public IlaipinyinProfile
 {
 public:
-    CSunpinyinProfile () : m_langPolicy(LanguagePolicy::instance()),
+    ClaipinyinProfile () : m_langPolicy(LanguagePolicy::instance()),
                            m_pySchemePolicy(PinyinSchemePolicy::instance()),
                            m_inputStylePolicy(InputStylePolicy::instance())
     {}
@@ -276,7 +276,7 @@ private:
     typename InputStylePolicy::Type & m_inputStylePolicy;
 };
 
-class CSunpinyinSessionFactory : private CNonCopyable
+class ClaipinyinSessionFactory : private CNonCopyable
 {
 public:
     typedef enum {
@@ -298,8 +298,8 @@ public:
     } ELanguage;
 
 public:
-    static CSunpinyinSessionFactory& getFactory(){
-        static CSunpinyinSessionFactory inst;
+    static ClaipinyinSessionFactory& getFactory(){
+        static ClaipinyinSessionFactory inst;
         return inst;
     }
 
@@ -310,7 +310,7 @@ public:
 
     CIMIView* createSession(){
         unsigned key = _policiesToKey(m_lang, m_pyScheme, m_inputStyle);
-        ISunpinyinProfile *profile = _getProfile(key);
+        IlaipinyinProfile *profile = _getProfile(key);
         if (!profile)
             return NULL;
 
@@ -325,38 +325,38 @@ public:
 
     void destroySession(CIMIView* pview){
         unsigned key = _policiesToKey(m_lang, m_pyScheme, m_inputStyle);
-        ISunpinyinProfile *profile = _getProfile(key);
+        IlaipinyinProfile *profile = _getProfile(key);
         if (!profile)
             return;
         profile->destroyProfile(pview);
     }
 
 private:
-    CSunpinyinSessionFactory ()
+    ClaipinyinSessionFactory ()
         : m_pyScheme(QUANPIN), m_inputStyle(CLASSIC_STYLE),
           m_lang(SIMPLIFIED_CHINESE),
           m_candiWindowSize(10){
         m_profiles [_policiesToKey(SIMPLIFIED_CHINESE, QUANPIN,
                                    CLASSIC_STYLE)] =
-            new CSunpinyinProfile <ASimplifiedChinesePolicy,
+            new ClaipinyinProfile <ASimplifiedChinesePolicy,
                                    AQuanpinSchemePolicy, AClassicStylePolicy> ();
 
         m_profiles [_policiesToKey(SIMPLIFIED_CHINESE, SHUANGPIN,
                                    CLASSIC_STYLE)] =
-            new CSunpinyinProfile <ASimplifiedChinesePolicy,
+            new ClaipinyinProfile <ASimplifiedChinesePolicy,
                                    AShuangpinSchemePolicy, AClassicStylePolicy> ();
     }
 
-    ~CSunpinyinSessionFactory (){
-        std::map <unsigned, ISunpinyinProfile*>::iterator it = m_profiles.begin();
-        std::map <unsigned, ISunpinyinProfile*>::iterator ite = m_profiles.end();
+    ~ClaipinyinSessionFactory (){
+        std::map <unsigned, IlaipinyinProfile*>::iterator it = m_profiles.begin();
+        std::map <unsigned, IlaipinyinProfile*>::iterator ite = m_profiles.end();
 
         for (; it != ite; ++it)
             delete it->second;
     }
 
-    ISunpinyinProfile* _getProfile(unsigned key){
-        std::map <unsigned, ISunpinyinProfile*>::iterator it = m_profiles.find(
+    IlaipinyinProfile* _getProfile(unsigned key){
+        std::map <unsigned, IlaipinyinProfile*>::iterator it = m_profiles.find(
             key);
         if (it != m_profiles.end()) {
             return it->second;
@@ -370,7 +370,7 @@ private:
                             EInputStyle inputStyle)
     { return (lang << 16) + (pyScheme << 8) + inputStyle; }
 
-    std::map <unsigned, ISunpinyinProfile*> m_profiles;
+    std::map <unsigned, IlaipinyinProfile*> m_profiles;
 
     EPyScheme m_pyScheme;
     EInputStyle m_inputStyle;

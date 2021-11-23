@@ -59,9 +59,9 @@
 #include <imi_uiobjects.h>
 
 #include <scim.h>
-#include "sunpinyin_utils.h"
-#include "sunpinyin_lookup_table.h"
-#include "sunpinyin_imengine.h"
+#include "laipinyin_utils.h"
+#include "laipinyin_lookup_table.h"
+#include "laipinyin_imengine.h"
 
 using namespace scim;
 

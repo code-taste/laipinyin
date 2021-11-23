@@ -5,7 +5,7 @@ import plistlib, hashlib, os, sys
 dir = "../../../data"
 filenames = [ "lm_sc.t3g.le", "pydict_sc.bin.le" ]
 files = []
-plist_file = "SunpinyinDataFiles.xml"
+plist_file = "laipinyinDataFiles.xml"
 
 def sha256(file):
     s = hashlib.sha256()
@@ -23,7 +23,7 @@ for filename in filenames:
     file = {}
 
     file["Name"] = filename
-    file["URL"] = "http://sunpinyin.googlecode.com/files/%s" % filename
+    file["URL"] = "http://laipinyin.googlecode.com/files/%s" % filename
     file["Size"] = int(os.path.getsize(path))
     file["SHA256"] = sha256(path)
 

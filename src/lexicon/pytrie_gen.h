@@ -1,6 +1,6 @@
 // -*- mode: c++ -*-
-#ifndef _SUNPINYIN_PYTRIE_GEN_H__
-#define _SUNPINYIN_PYTRIE_GEN_H__
+#ifndef _laipinyin_PYTRIE_GEN_H__
+#define _laipinyin_PYTRIE_GEN_H__
 
 #include "../portability.h"
 

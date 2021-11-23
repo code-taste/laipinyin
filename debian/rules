@@ -36,19 +36,19 @@ endif
 # 	$(error cross-compiling not supported so far\; cannot continue)
 # endif
 
-SUNPINYIN_DATA_DEPENDS=sunpinyin-data-$(HOST_ENDIANNESS)
+laipinyin_DATA_DEPENDS=laipinyin-data-$(HOST_ENDIANNESS)
 DEB_DH_MAKESHLIBS_ARGS := -n
-DEB_DH_GENCONTROL_ARGS := -u'-Vsunpinyin-data-depends=$(SUNPINYIN_DATA_DEPENDS)'
+DEB_DH_GENCONTROL_ARGS := -u'-Vlaipinyin-data-depends=$(laipinyin_DATA_DEPENDS)'
 
-binary-fixup/sunpinyin-data-le::
+binary-fixup/laipinyin-data-le::
 	for f in pydict_sc.bin lm_sc.t3g ; do \
 		cp -f $(CURDIR)/data/$$f.le \
-		$(CURDIR)/debian/sunpinyin-data-le/usr/lib/sunpinyin/data/$$f; \
+		$(CURDIR)/debian/laipinyin-data-le/usr/lib/laipinyin/data/$$f; \
 	done
 
-binary-fixup/sunpinyin-data-be::
+binary-fixup/laipinyin-data-be::
 	for f in pydict_sc.bin lm_sc.t3g ; do \
 		cp -f $(CURDIR)/data/$$f.be \
-		$(CURDIR)/debian/sunpinyin-data-be/usr/lib/sunpinyin/data/$$f; \
+		$(CURDIR)/debian/laipinyin-data-be/usr/lib/laipinyin/data/$$f; \
 	done
 

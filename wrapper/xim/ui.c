@@ -38,12 +38,12 @@
 #include "common.h"
 #include "ui.h"
 
-#define ENG_ICON SUNPINYIN_XIM_ICON_DIR"/eng.svg"
-#define HAN_ICON SUNPINYIN_XIM_ICON_DIR"/han.svg"
-#define LOGO_FILE_BIG SUNPINYIN_XIM_ICON_DIR"/sunpinyin-logo-big.png"
+#define ENG_ICON LAIPINYIN_XIM_ICON_DIR"/eng.svg"
+#define HAN_ICON LAIPINYIN_XIM_ICON_DIR"/han.svg"
+#define LOGO_FILE_BIG LAIPINYIN_XIM_ICON_DIR"/laipinyin-logo-big.png"
 
-#define SYSTEM_SKIN_DIR SUNPINYIN_XIM_SETTING_DIR"/skins"
-#define USER_SKIN_DIR "%s/.sunpinyin/xim_skins"
+#define SYSTEM_SKIN_DIR LAIPINYIN_XIM_SETTING_DIR"/skins"
+#define USER_SKIN_DIR "%s/.laipinyin/xim_skins"
 
 
 static GtkStatusIcon* icbar_tray;
@@ -68,7 +68,7 @@ show_ui_about(GtkWidget* wid, gpointer user_data)
 static void
 launch_preferences(GtkWidget* wid, gpointer user_data)
 {
-    system("xsunpinyin-preferences&");
+    system("xlaipinyin-preferences&");
 }
 
 static void

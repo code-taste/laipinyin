@@ -2,7 +2,7 @@
 
 import os, sys
 import codecs
-from importer import import_to_sunpinyin_user_dict
+from importer import import_to_laipinyin_user_dict
 
 def load_qq_user_dict (fname):
     result = []
@@ -25,7 +25,7 @@ def main ():
         exit (1)
 
     qq_user_dict = load_qq_user_dict(sys.argv[1])
-    import_to_sunpinyin_user_dict (qq_user_dict)
+    import_to_laipinyin_user_dict (qq_user_dict)
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Package SunPinyin for release
+# Package laipinyin for release
 
 import sys, os, subprocess, time, plistlib
 
@@ -10,26 +10,26 @@ except:
     sys.exit(1)
 
 env = Environment(loader=FileSystemLoader('.'))
-plist = plistlib.readPlist("../build/SunPinyin.app/Contents/Info.plist")
+plist = plistlib.readPlist("../build/laipinyin.app/Contents/Info.plist")
 
-url_base = "http://sunpinyin.googlecode.com/files/"
-xml_url_base = "http://release.sunpinyin.googlecode.com/git/"
-appcast_url = xml_url_base + "SunpinyinAppcast.xml"
+url_base = "http://laipinyin.googlecode.com/files/"
+xml_url_base = "http://release.laipinyin.googlecode.com/git/"
+appcast_url = xml_url_base + "laipinyinAppcast.xml"
 
-pack_proj = "SunPinyin/SunPinyin.packproj"
-pkg = "SunPinyin/build/SunPinyin.pkg"
-resource_dir = "../build/SunPinyin.app/Contents/Resources"
+pack_proj = "laipinyin/laipinyin.packproj"
+pkg = "laipinyin/build/laipinyin.pkg"
+resource_dir = "../build/laipinyin.app/Contents/Resources"
 
 version = plist["CFBundleVersion"]
-releasenotes_url = xml_url_base + "SunpinyinReleaseNotes.xml"
+releasenotes_url = xml_url_base + "laipinyinReleaseNotes.xml"
 
-zip = "SunPinyin-MacOS-%s.zip" % version
+zip = "laipinyin-MacOS-%s.zip" % version
 file_url = url_base + zip
 
 priv_key = "%s/.ssh/dsa_priv.pem" % os.path.expanduser('~')
 date = time.strftime("%a, %d %b %Y %H:%M:%S %z")
 appcast_template = 'appcast.template.xml'
-appcast = "sunpinyin_appcast.xml"
+appcast = "laipinyin_appcast.xml"
 
 if len(sys.argv) > 1:
     priv_key = sys.argv[1]
@@ -48,8 +48,8 @@ print("[PACK] Building %s..." % pkg)
 os.system("freeze -v %s" % pack_proj)
 
 print("[PACK] Compressing %s..." % zip)
-os.chdir("SunPinyin/build")
-os.system("zip -y -r ../../%s SunPinyin.pkg" % zip)
+os.chdir("laipinyin/build")
+os.system("zip -y -r ../../%s laipinyin.pkg" % zip)
 os.chdir("../..")
 
 print("[PACK] Signing %s..." % zip)

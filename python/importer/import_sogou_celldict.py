@@ -5,7 +5,7 @@
 # http://code.google.com/p/ibus-cloud-pinyin
 # http://forum.ubuntu.org.cn/viewtopic.php?f=8&t=250136&start=0
 
-from importer import import_to_sunpinyin_user_dict
+from importer import import_to_laipinyin_user_dict
 import struct
 import os, sys
 
@@ -75,7 +75,7 @@ def main ():
         exit (1)
 
     generator = get_word_from_sogou_cell_dict (sys.argv[1])
-    import_to_sunpinyin_user_dict (generator)
+    import_to_laipinyin_user_dict (generator)
 
 if __name__ == "__main__":
     main()

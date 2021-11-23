@@ -62,13 +62,13 @@ envvar = [('CC', 'CC'),
           ('LDFLAGS', 'LINKFLAGS')]
 PassVariables(envvar, env)
 
-data_dir = env['DATADIR'] + '/scim-sunpinyin'
-icons_dir = env['DATADIR'] + '/scim-sunpinyin/icons'
-bin_dir = env['LIBEXECDIR'] + '/scim-sunpinyin'
-gettext_package = 'scim-sunpinyin'
+data_dir = env['DATADIR'] + '/scim-laipinyin'
+icons_dir = env['DATADIR'] + '/scim-laipinyin/icons'
+bin_dir = env['LIBEXECDIR'] + '/scim-laipinyin'
+gettext_package = 'scim-laipinyin'
 
-extra_cflags = ' -DSCIM_SUNPINYIN_LOCALEDIR=\'"%s"\'' % (env['DATADIR'] + '/locale')
-extra_cflags += ' -DSCIM_SUNPINYIN_ICON_DIR=\'"%s"\'' % icons_dir
+extra_cflags = ' -DSCIM_laipinyin_LOCALEDIR=\'"%s"\'' % (env['DATADIR'] + '/locale')
+extra_cflags += ' -DSCIM_laipinyin_ICON_DIR=\'"%s"\'' % icons_dir
 extra_cflags += ' -DLIBEXECDIR=\'"%s"\'' % bin_dir
 extra_cflags += ' -DGETTEXT_PACKAGE=\'"%s"\'' % gettext_package
 extra_cflags += ' -Isrc'
@@ -111,14 +111,14 @@ def DoConfigure():
     if not conf.CheckPKG('scim'):
         Exit(1)
 
-    if not conf.CheckPKG('sunpinyin-2.0'):
+    if not conf.CheckPKG('laipinyin-2.0'):
         Exit(1)
 
     if not conf.CheckPKG('scim-gtkutils'):
         Exit(1)
 
     env = conf.Finish()
-    env.ParseConfig('pkg-config scim sunpinyin-2.0 scim-gtkutils --libs --cflags')
+    env.ParseConfig('pkg-config scim laipinyin-2.0 scim-gtkutils --libs --cflags')
 
 
 DoConfigure()
@@ -126,18 +126,18 @@ DoConfigure()
 scim_icondir = os.popen('pkg-config scim   --variable=icondir').readlines()[0].rstrip()
 scim_moduledir = os.popen('pkg-config scim   --variable=moduledir').readlines()[0].rstrip()
 
-lib_sunpinyin_imengine_setup_target = "sunpinyin_imengine_setup"
-lib_sunpinyin_imengine_setup_sources = ["src/sunpinyin_imengine_setup.cpp"]
-env.SharedLibrary(target=lib_sunpinyin_imengine_setup_target, source=lib_sunpinyin_imengine_setup_sources)
+lib_laipinyin_imengine_setup_target = "laipinyin_imengine_setup"
+lib_laipinyin_imengine_setup_sources = ["src/laipinyin_imengine_setup.cpp"]
+env.SharedLibrary(target=lib_laipinyin_imengine_setup_target, source=lib_laipinyin_imengine_setup_sources)
 
-lib_sunpinyin_imengine_target = "sunpinyin_imengine"
-lib_sunpinyin_imengine_sources = ['src/imi_scimwin.cpp',
-                                  'src/sunpinyin_imengine.cpp',
-                                  'src/sunpinyin_lookup_table.cpp',
-                                  'src/sunpinyin_utils.cpp']
-env.SharedLibrary(target=lib_sunpinyin_imengine_target, source=lib_sunpinyin_imengine_sources)
-os.system('chmod 0644 ' + lib_sunpinyin_imengine_setup_target + '.so')
-os.system('chmod 0644 ' + lib_sunpinyin_imengine_target + '.so')
+lib_laipinyin_imengine_target = "laipinyin_imengine"
+lib_laipinyin_imengine_sources = ['src/imi_scimwin.cpp',
+                                  'src/laipinyin_imengine.cpp',
+                                  'src/laipinyin_lookup_table.cpp',
+                                  'src/laipinyin_utils.cpp']
+env.SharedLibrary(target=lib_laipinyin_imengine_target, source=lib_laipinyin_imengine_sources)
+os.system('chmod 0644 ' + lib_laipinyin_imengine_setup_target + '.so')
+os.system('chmod 0644 ' + lib_laipinyin_imengine_target + '.so')
 for locale in locales:
     mo = 'po/%s.mo' % (locale,)
     env.Command(mo, [], 'msgfmt po/%s.po -o %s' % (locale, mo))
@@ -147,17 +147,17 @@ for locale in locales:
 # ==============================install================================
 def DoInstall():
 
-    os.system('chmod 0644 ' + lib_sunpinyin_imengine_setup_target + '.so')
-    os.system('chmod 0644 ' + lib_sunpinyin_imengine_target + '.so')
+    os.system('chmod 0644 ' + lib_laipinyin_imengine_setup_target + '.so')
+    os.system('chmod 0644 ' + lib_laipinyin_imengine_target + '.so')
 
     icons_target = env.Install(scim_icondir,
-                               ['data/sunpinyin_logo.png'])
+                               ['data/laipinyin_logo.png'])
 
     imengine_target = env.Install(scim_moduledir + '/IMEngine',
-                                   'sunpinyin_imengine.so')
+                                   'laipinyin_imengine.so')
 
     imsetup_target = env.Install(scim_moduledir + '/SetupUI',
-                                   'sunpinyin_imengine_setup.so')
+                                   'laipinyin_imengine_setup.so')
 
     locale_targets = []
     for locale in locales:

@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef _SUNPINYIN_IMI_GLIB_HANDLER_H
-#define _SUNPINYIN_IMI_GLIB_HANDLER_H
+#ifndef _laipinyin_IMI_GLIB_HANDLER_H
+#define _laipinyin_IMI_GLIB_HANDLER_H
 
 #include <glib.h>
 #include "imi_winHandler.h"

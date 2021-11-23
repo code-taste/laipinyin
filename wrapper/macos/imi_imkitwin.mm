@@ -40,7 +40,7 @@
 #endif
 
 #import "imi_imkitwin.h"
-#import "SunPinyinInputController.h"
+#import "laipinyinInputController.h"
 
 #ifdef WORDS_BIGENDIAN
 #define UTF32Encoding NSUTF32BigEndianStringEncoding

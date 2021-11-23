@@ -41,7 +41,7 @@
 #include <ibus.h>
 #include "engine.h"
 #include "ibus_common.h"
-#include "sunpinyin_config.h"
+#include "laipinyin_config.h"
 
 #define N_(String) (String)
 #define _(String)  gettext(String)
@@ -87,32 +87,32 @@ init ()
     IBusConfig* config = ibus_bus_get_config(bus);
     g_object_ref_sink(config);
     
-    SunPinyinConfig::set_config(config);
+    laipinyinConfig::set_config(config);
 
     
-    component = ibus_component_new ("org.freedesktop.IBus.SunPinyin",
-                                    "SunPinyin2",
+    component = ibus_component_new ("org.freedesktop.IBus.laipinyin",
+                                    "laipinyin2",
                                     "0.1.0",
                                     "LGPL/CDDL",
                                     "Kov Chai <tchaikov@gmail.com>",
-                                    "http://code.google.com/p/sunpinyin/",
+                                    "http://code.google.com/p/laipinyin/",
                                     "",
-                                    "ibus-sunpinyin");
+                                    "ibus-laipinyin");
     ibus_component_add_engine (component,
-                               ibus_engine_desc_new ("sunpinyin",
-                                                     "SunPinyin",
+                               ibus_engine_desc_new ("laipinyin",
+                                                     "laipinyin",
                                                      _("Simplified Chinese Input Method developed by SUN"),
                                                      "zh_CN",
                                                      "LGPL/CDDL",
                                                      "Kov Chai <tchaikov@gmail.com>",
-                                                     IBUS_SUNPINYIN_ICON_DIR"/sunpinyin-logo.png",
+                                                     IBUS_laipinyin_ICON_DIR"/laipinyin-logo.png",
                                                      "en"));
     
     factory = ibus_factory_new (ibus_bus_get_connection (bus));
-    ibus_factory_add_engine (factory, "sunpinyin", IBUS_TYPE_SUNPINYIN_ENGINE);
+    ibus_factory_add_engine (factory, "laipinyin", IBUS_TYPE_laipinyin_ENGINE);
 
     if (by_ibus) {
-        ibus_bus_request_name (bus, "org.freedesktop.IBus.SunPinyin", 0);
+        ibus_bus_request_name (bus, "org.freedesktop.IBus.laipinyin", 0);
     } else {
         ibus_bus_register_component (bus, component);
     }
@@ -123,12 +123,12 @@ int main(int argc, char *argv[])
 {
 
     setlocale (LC_ALL, "");
-    bindtextdomain (GETTEXT_PACKAGE, IBUS_SUNPINYIN_LOCALEDIR);
+    bindtextdomain (GETTEXT_PACKAGE, IBUS_laipinyin_LOCALEDIR);
     textdomain (GETTEXT_PACKAGE);
     
     GOptionContext* context;
-    context = g_option_context_new ("- ibus sunpinyin engine component");
-    g_option_context_add_main_entries (context, entries, "ibus-sunpinyin");
+    context = g_option_context_new ("- ibus laipinyin engine component");
+    g_option_context_add_main_entries (context, entries, "ibus-laipinyin");
     GError *error = NULL;
     if (!g_option_context_parse (context, &argc, &argv, &error)) {
         g_print ("Option parsing failed: %s\n", error->message);

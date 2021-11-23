@@ -1,10 +1,10 @@
-How to install data files for sunpinyin
+How to install data files for laipinyin
 =======================================
 
 For normal users
 ----------------
 
-In a temporary directory, run `sunpinyin-dictgen' as root.
+In a temporary directory, run `laipinyin-dictgen' as root.
 
 For developers and expert users
 -------------------------------
@@ -14,7 +14,7 @@ unpack them into some directory, and issue the following commands in
 that directory:
 
     # Copy the installation Makefile to the temporary directory.
-    cp @PREFIX@/share/doc/sunpinyin/SLM-inst.mk Makefile
+    cp @PREFIX@/share/doc/laipinyin/SLM-inst.mk Makefile
     # Generate the SLM and lexicon files.
     make
     # Install the generated data files (requires root permission).

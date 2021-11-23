@@ -1,4 +1,4 @@
-Source: sunpinyin
+Source: laipinyin
 Section: libs
 Priority: optional
 Maintainer: Mike Qin <mikeandmore@gmail.com>
@@ -6,47 +6,47 @@ Build-Depends: @cdbs@, pkg-config,
  libgtk2.0-dev (>=2.12.0), libibus-dev (>= 1.2), 
  libsqlite3-dev (>= 3.6), sqlite3, python-support
 Standards-Version: 3.8.4
-Homepage: http://code.google.com/p/sunpinyin/
+Homepage: http://code.google.com/p/laipinyin/
 
-Package: libsunpinyin3
+Package: liblaipinyin3
 Architecture: any
 Section: libs
-Depends: ${sunpinyin-data-depends}, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${laipinyin-data-depends}, ${shlibs:Depends}, ${misc:Depends}
 Recommends: im-switch
-Description: Sunpinyin Input Method library.
- Sunpinyin is an input method engine for Simplified Chinese.
+Description: laipinyin Input Method library.
+ laipinyin is an input method engine for Simplified Chinese.
  It is an SLM based IM engine, and features full sentence input.
 
-Package: libsunpinyin3-dev
+Package: liblaipinyin3-dev
 Architecture: any
 Section: libs
-Depends: ${sunpinyin-data-depends}, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${laipinyin-data-depends}, ${shlibs:Depends}, ${misc:Depends}
 Recommends: im-switch
-Description: Sunpinyin Input Method library.
- Sunpinyin is an input method engine for Simplified Chinese.
+Description: laipinyin Input Method library.
+ laipinyin is an input method engine for Simplified Chinese.
  It is an SLM based IM engine, and features full sentence input.
  .
- This contains header files of sunpinyin that allows user to write their
- own front-end for sunpinyin.
+ This contains header files of laipinyin that allows user to write their
+ own front-end for laipinyin.
 
-Package: sunpinyin-data-le
+Package: laipinyin-data-le
 Architecture: all
 Depends: ${misc:Depends}
-Conflicts: sunpinyin-data-be
-Description: Little-endian data file for SunPinyin input method engine
- Sunpinyin is an input method engine for Simplified Chinese.
+Conflicts: laipinyin-data-be
+Description: Little-endian data file for laipinyin input method engine
+ laipinyin is an input method engine for Simplified Chinese.
  It is an SLM based IM engine, and features full sentence input.
  .
  This package contains necessary lexicon data and its index data files
- needed by the sunpinyin input methods on little endian architectures.
+ needed by the laipinyin input methods on little endian architectures.
 
-Package: sunpinyin-data-be
+Package: laipinyin-data-be
 Architecture: all
 Depends: ${misc:Depends}
-Conflicts: sunpinyin-data-le
-Description: Big-endian data file for SunPinyin input method engine
- Sunpinyin is an input method engine for Simplified Chinese.
+Conflicts: laipinyin-data-le
+Description: Big-endian data file for laipinyin input method engine
+ laipinyin is an input method engine for Simplified Chinese.
  It is an SLM based IM engine, and features full sentence input.
  .
  This package contains necessary lexicon data and its index data files
- needed by the sunpinyin input methods on big endian architectures.
+ needed by the laipinyin input methods on big endian architectures.

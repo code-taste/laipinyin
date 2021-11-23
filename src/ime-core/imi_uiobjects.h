@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef SUNPINYIN_UI_OBJECTS_H
-#define SUNPINYIN_UI_OBJECTS_H
+#ifndef laipinyin_UI_OBJECTS_H
+#define laipinyin_UI_OBJECTS_H
 
 #include "portability.h"
 

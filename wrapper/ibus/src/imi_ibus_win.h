@@ -38,12 +38,12 @@
 
 #include <ime-core/imi_glibHandler.h>
 
-class SunPinyinEngine;
+class laipinyinEngine;
 
 class CIBusWinHandler : public CIMIGlibHandler
 {
 public:
-    CIBusWinHandler(SunPinyinEngine *);
+    CIBusWinHandler(laipinyinEngine *);
 
     /* inherited methods implementation */
     /*@{*/
@@ -67,7 +67,7 @@ public:
     /*@}*/
 
 private:
-    SunPinyinEngine *m_engine;
+    laipinyinEngine *m_engine;
 };
 
 #endif // IMI_IBUS_WIN_H

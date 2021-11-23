@@ -252,11 +252,11 @@ InitializePython()
 
     PyRun_SimpleString("import sys");
     eval_str << "sys.path.append(r'" << getenv("HOME")
-             << "/.sunpinyin/plugins/" << "')";
+             << "/.laipinyin/plugins/" << "')";
     PyRun_SimpleString(eval_str.str().c_str());
 }
 
-#define PLUGIN_LIST_FILE "/.sunpinyin/plugins.list";
+#define PLUGIN_LIST_FILE "/.laipinyin/plugins.list";
 #define PLUGIN_NAME_LEN 128
 
 CIMIPluginManager::CIMIPluginManager()

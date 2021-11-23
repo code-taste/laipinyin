@@ -1,0 +1,28 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<!-- filename: laipinyin.xml -->
+<component>
+  <name>org.freedesktop.IBus.laipinyin</name>
+  <description>laipinyin Component</description>
+  <exec>@LIBEXEC_DIR@/ibus-engine-laipinyin --ibus</exec>
+  <version>@VERSION@</version>
+  <author>Kov Chai &lt;tchaikov@gmail.com&gt;</author>
+  <license>LGPL</license>
+  <homepage>http://opensolaris.org/os/project/input-method/</homepage>
+  <textdomain>ibus-laipinyin</textdomain>
+  
+  <!-- for static engines -->
+  <engines>
+    <engine>
+      <name>laipinyin</name>
+      <language>zh_CN</language>
+      <license>LGPL</license>
+      <author>Kov Chai &lt;tchaikov@gmail.com&gt;</author>
+      <icon>@ICON_DIR@/laipinyin-logo.png</icon>
+      <layout>us</layout>
+      <longname>laipinyin</longname>
+      <description>laipinyin Input Method</description>
+      <rank>99</rank>
+      <setup>@LIBEXEC_DIR@/ibus-setup-laipinyin</setup>
+    </engine>
+  </engines>
+</component>

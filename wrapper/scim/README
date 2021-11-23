@@ -1,6 +1,6 @@
-scim-sunpinyin
+scim-laipinyin
 ===
 
-scim-sunpinyin is a wrapper around SunPinyin which enables user to use
-SunPinyin with SCIM(Smart Common Input Method).
+scim-laipinyin is a wrapper around laipinyin which enables user to use
+laipinyin with SCIM(Smart Common Input Method).
 

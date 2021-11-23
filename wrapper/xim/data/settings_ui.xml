@@ -46,7 +46,7 @@
   <object class="GtkDialog" id="settings_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">XSunpinyin Preferences</property>
+    <property name="title" translatable="yes">Xlaipinyin Preferences</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="icon_name">preferences-desktop</property>

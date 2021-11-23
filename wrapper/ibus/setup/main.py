@@ -54,7 +54,7 @@ except ImportError:
 import gettext
 import locale
 
-GETTEXT_PACKAGE="ibus-sunpinyin"
+GETTEXT_PACKAGE="ibus-laipinyin"
 _ = lambda msg: gettext.gettext(msg)
 
 XML_FILE = path.join(path.dirname(__file__), "setup.xml")
@@ -96,10 +96,10 @@ class Option(object):
     def __get_config_name(self):
         keys = self.name.rsplit(SEPARATOR ,1)
         if len(keys) == 2:
-            return SEPARATOR.join(("engine/SunPinyin", keys[0])), keys[1]
+            return SEPARATOR.join(("engine/laipinyin", keys[0])), keys[1]
         else:
             assert len(keys) == 1
-            return "engine/SunPinyin", keys[0]
+            return "engine/laipinyin", keys[0]
 
 class TrivalOption(Option):
     """option represented using a simple gtk widget

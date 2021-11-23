@@ -1,6 +1,6 @@
 // -*- mode: c++ -*-
-#ifndef __SUNPINYIN_PYTRIE_WRITER_H__
-#define __SUNPINYIN_PYTRIE_WRITER_H__
+#ifndef __laipinyin_PYTRIE_WRITER_H__
+#define __laipinyin_PYTRIE_WRITER_H__
 
 #include "writer.h"
 #include "pytrie.h"
@@ -102,6 +102,6 @@ template <>
 bool revert_write<CPinyinTrie::TTransUnit> (const CPinyinTrie::TTransUnit& t,
                                             FILE *fp);
 
-#endif //__SUNPINYIN_PYTRIE_WRITER_H__
+#endif //__laipinyin_PYTRIE_WRITER_H__
 
 // -*- indent-tabs-mode: nil -*- vim:et:ts=4

@@ -81,9 +81,9 @@
 #endif
 
 #define XIM_VERSION "2.0.3"
-#define XIM_PROGRAM_NAME "SunPinyin-XIM"
-#define XIM_WEBSITE "http://mike.struct.cn/sunpinyin-xim"
-#define XIM_COMMENTS "a XIM front-end for SunPinyin."
+#define XIM_PROGRAM_NAME "LaiPinyin-XIM"
+#define XIM_WEBSITE "http://mike.struct.cn/laipinyin-xim"
+#define XIM_COMMENTS "a XIM front-end for laipinyin."
 
 
 #endif /* _COMMON_H_ */

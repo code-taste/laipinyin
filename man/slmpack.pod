@@ -1,6 +1,6 @@
 =head1 NAME
 
-slmpack - convert the ARPA format of SunPinyin back-off language model to its binary representation
+slmpack - convert the ARPA format of laipinyin back-off language model to its binary representation
 
 =head1 SYNOPSIS
 
@@ -8,7 +8,7 @@ B<slmpack> I<arpa_file> I<dict_file> I<binary_slm_file>
 
 =head1 DESCRIPTION
 
-B<slmpack> converts the ARPA format of a threaded SunPinyin back-off
+B<slmpack> converts the ARPA format of a threaded laipinyin back-off
 language model to its binary representation.
 
 =head1 NOTE

@@ -10,9 +10,9 @@ sources = ['ic.c',
            'ui.c',
            'main.c',
            'settings.c',
-           'sunpinyin_preedit.cc',
-           'sunpinyin_preedit_gtk.cc',
-           'sunpinyin_preedit_skin.cc',
+           'laipinyin_preedit.cc',
+           'laipinyin_preedit_gtk.cc',
+           'laipinyin_preedit_skin.cc',
            'xim.c',
            'xim_trigger.c',
            'xmisc.c']
@@ -76,11 +76,11 @@ envvar = [('CC', 'CC'),
 PassVariables(envvar, env)
 
 bin_dir = env['PREFIX'] + '/bin'
-data_dir = '%s/share/xsunpinyin/' % env['PREFIX']
+data_dir = '%s/share/xlaipinyin/' % env['PREFIX']
 icon_dir = data_dir + 'icons/'
 
-extra_cflags = ' -DSUNPINYIN_XIM_ICON_DIR=\\"%s\\"' % icon_dir
-extra_cflags += ' -DSUNPINYIN_XIM_SETTING_DIR=\\"%s\\"' % data_dir
+extra_cflags = ' -DLAIPINYIN_XIM_ICON_DIR=\\"%s\\"' % icon_dir
+extra_cflags += ' -DLAIPINYIN_XIM_SETTING_DIR=\\"%s\\"' % data_dir
 
 env.Append(CFLAGS=extra_cflags)
 env.Append(CXXFLAGS=extra_cflags)
@@ -120,22 +120,22 @@ def DoConfigure():
     if not conf.CheckPKG('x11'):
         Exit(1)
 
-    if not conf.CheckPKG('sunpinyin-2.0'):
+    if not conf.CheckPKG('laipinyin-2.0'):
         Exit(1)
 
     env = conf.Finish()
-    env.ParseConfig('pkg-config gtk+-2.0 x11 sunpinyin-2.0 --libs --cflags')
+    env.ParseConfig('pkg-config gtk+-2.0 x11 laipinyin-2.0 --libs --cflags')
 
 DoConfigure()
 
 env.Append(LIBS=env.Library('IMdkit', source=imdkit_sources))
-env.Program('xsunpinyin', source=sources)
-env.Program('xsunpinyin-preferences', source=preferences_sources)
+env.Program('xlaipinyin', source=sources)
+env.Program('xlaipinyin-preferences', source=preferences_sources)
 
 
 def DoInstall():
     bin_target = env.Install(bin_dir,
-                             ['xsunpinyin', 'xsunpinyin-preferences'])
+                             ['xlaipinyin', 'xlaipinyin-preferences'])
     icon_target = env.Install(icon_dir,
                               ['data/chnpunc.png',
                                'data/han.png',
@@ -145,8 +145,8 @@ def DoInstall():
                                'data/engpunc.png',
                                'data/full.png',
                                'data/half.png',
-                               'data/sunpinyin-logo-big.png',
-                               'data/sunpinyin-logo.png'])
+                               'data/laipinyin-logo-big.png',
+                               'data/laipinyin-logo.png'])
     data_target = env.Install(data_dir, ['data/settings_ui.xml'])
     data_target += env.Install(data_dir + 'skins/', Glob('data/skins/*'))
     env.Alias('install-bin', bin_target)

@@ -44,7 +44,7 @@ using std::istream;
 #define N_GRAM (3)
 
 
-/* the ARPA style representation of sunpinyin's SLM */
+/* the ARPA style representation of laipinyin's SLM */
 class CArpaSlm {
 public:
     struct TLeaf {

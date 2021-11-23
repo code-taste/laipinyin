@@ -11,7 +11,7 @@ Build
 * Ported to ARMEL architecture.
 * Able to build on FreeBSD.
 
-libsunpinyin
+liblaipinyin
 ------------
 
 * New LOGO!
@@ -21,17 +21,17 @@ libsunpinyin
 * Fixed weird behavior of history with a single character.
 * Fixed a potential issue for candidate ranking.
 
-ibus-sunpinyin
+ibus-laipinyin
 --------------
 
 * Supports --libdir, --datadir, --execdir as configuration arguments.
-* Alt+num key as the candidate delete key for ibus-sunpinyin.
+* Alt+num key as the candidate delete key for ibus-laipinyin.
 * Able to build on IBus-1.4
 
-xsunpinyin
+xlaipinyin
 ----------
 
-* Synchronized the version between xsunpinyin and libsunpinyin project.
+* Synchronized the version between xlaipinyin and liblaipinyin project.
 * Fixed startup crash with empty directory.
 * Fixed position problem on multi-screen.
 * Fixed crash on exit, which caused history information lost.
@@ -41,7 +41,7 @@ xsunpinyin
 * Fixed ignorance of ShuangPin setting.
 * Fixed weird behavior of fast switch to english. (Issue 213).
 
-scim-sunpinyin
+scim-laipinyin
 --------------
 
 * Add legacy support for scim (Thanks to liangguo)

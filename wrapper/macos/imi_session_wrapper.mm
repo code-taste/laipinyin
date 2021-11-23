@@ -37,9 +37,9 @@
 
 #import "imi_session_wrapper.h"
 
-CSunpinyinSessionWrapper::CSunpinyinSessionWrapper(id ic) : m_ic(ic), m_pv(0), m_wh(0), m_hotkey_profile(0)
+ClaipinyinSessionWrapper::ClaipinyinSessionWrapper(id ic) : m_ic(ic), m_pv(0), m_wh(0), m_hotkey_profile(0)
 {
-    CSunpinyinSessionFactory& factory = CSunpinyinSessionFactory::getFactory();
+    ClaipinyinSessionFactory& factory = ClaipinyinSessionFactory::getFactory();
     
     m_pv = factory.createSession();
     
@@ -55,10 +55,10 @@ CSunpinyinSessionWrapper::CSunpinyinSessionWrapper(id ic) : m_ic(ic), m_pv(0), m
     apply_configuration ();
 }
 
-CSunpinyinSessionWrapper::~CSunpinyinSessionWrapper()
+ClaipinyinSessionWrapper::~ClaipinyinSessionWrapper()
 {
     if (m_pv) {
-        CSunpinyinSessionFactory& factory = CSunpinyinSessionFactory::getFactory();
+        ClaipinyinSessionFactory& factory = ClaipinyinSessionFactory::getFactory();
         factory.destroySession(m_pv);
     }
 
@@ -66,7 +66,7 @@ CSunpinyinSessionWrapper::~CSunpinyinSessionWrapper()
     delete m_wh;
 }
 
-void CSunpinyinSessionWrapper::switchInputMode (bool isEnglish, ECommitPolicies policy)
+void ClaipinyinSessionWrapper::switchInputMode (bool isEnglish, ECommitPolicies policy)
 {
     if (!isValid())
         return;
@@ -80,7 +80,7 @@ void CSunpinyinSessionWrapper::switchInputMode (bool isEnglish, ECommitPolicies 
     }
 }
 
-bool CSunpinyinSessionWrapper::onConfigChanged (const COptionEvent& event)
+bool ClaipinyinSessionWrapper::onConfigChanged (const COptionEvent& event)
 {
     if (!isValid())
         return false;
@@ -104,7 +104,7 @@ bool CSunpinyinSessionWrapper::onConfigChanged (const COptionEvent& event)
     return false;
 }
 
-void CSunpinyinSessionWrapper::windowHandlerTimerCallback()
+void ClaipinyinSessionWrapper::windowHandlerTimerCallback()
 {
     if (isValid()) {
         m_wh->doneDeferedUpdate();
@@ -112,7 +112,7 @@ void CSunpinyinSessionWrapper::windowHandlerTimerCallback()
     }
 }
 
-void CSunpinyinSessionWrapper::apply_configuration()
+void ClaipinyinSessionWrapper::apply_configuration()
 {
     m_hotkey_profile->setPunctSwitchKey(CKeyEvent(IM_VK_PERIOD, IM_VK_PERIOD, IM_CTRL_MASK));    
     m_hotkey_profile->setSymbolSwitchKey(CKeyEvent(IM_VK_SPACE, IM_VK_SPACE, IM_ALT_MASK));
@@ -126,32 +126,32 @@ void CSunpinyinSessionWrapper::apply_configuration()
     m_pv->setCancelOnBackspace(CSessionConfigStore::instance().m_cancel_on_backspace);
 }
 
-void CSunpinyinSessionWrapper::update_cand_window_size(unsigned size)
+void ClaipinyinSessionWrapper::update_cand_window_size(unsigned size)
 {
     m_pv->setCandiWindowSize(size);
 }
 
-void CSunpinyinSessionWrapper::update_page_key_minus(bool enable)
+void ClaipinyinSessionWrapper::update_page_key_minus(bool enable)
 {
     update_page_key(IM_VK_MINUS, IM_VK_EQUALS, enable);
 }
 
-void CSunpinyinSessionWrapper::update_page_key_comma(bool enable)
+void ClaipinyinSessionWrapper::update_page_key_comma(bool enable)
 {
     update_page_key(IM_VK_COMMA, IM_VK_PERIOD, enable);
 }
 
-void CSunpinyinSessionWrapper::update_page_key_bracket(bool enable)
+void ClaipinyinSessionWrapper::update_page_key_bracket(bool enable)
 {
     update_page_key(IM_VK_OPEN_BRACKET, IM_VK_CLOSE_BRACKET, enable);
 }
 
-void CSunpinyinSessionWrapper::update_page_key_arrows(bool enable)
+void ClaipinyinSessionWrapper::update_page_key_arrows(bool enable)
 {
     update_page_key(IM_VK_UP, IM_VK_DOWN, enable);
 }
 
-void CSunpinyinSessionWrapper::update_page_key(unsigned page_up, unsigned page_down, bool enable)
+void ClaipinyinSessionWrapper::update_page_key(unsigned page_up, unsigned page_down, bool enable)
 {
     if (enable) {
         m_hotkey_profile->addPageUpKey(CKeyEvent(page_up, page_up));
@@ -162,7 +162,7 @@ void CSunpinyinSessionWrapper::update_page_key(unsigned page_up, unsigned page_d
     }
 }
 
-void CSunpinyinSessionWrapper::update_charset_level(unsigned charset)
+void ClaipinyinSessionWrapper::update_charset_level(unsigned charset)
 {
     // charset can only be 0,1,2 or 3
     m_pv->getIC()->setCharsetLevel(charset & 3);

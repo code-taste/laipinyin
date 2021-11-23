@@ -24,7 +24,7 @@ DICT_FILE = dict.utf8
 PYTRIE_FILE = pydict_sc.bin
 PYTRIE_LOG_FILE = pydict_sc.log
 
-SYSTEM_DATA_DIR = ${DESTDIR}@DATADIR@/sunpinyin
+SYSTEM_DATA_DIR = ${DESTDIR}@DATADIR@/laipinyin
 
 all: slm3_dist
 install: slm3_install

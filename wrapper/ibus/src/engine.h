@@ -38,13 +38,13 @@
 
 #include <ibus.h>
 
-#define IBUS_TYPE_SUNPINYIN_ENGINE \
-    (ibus_sunpinyin_engine_get_type ())
+#define IBUS_TYPE_laipinyin_ENGINE \
+    (ibus_laipinyin_engine_get_type ())
 
-GType   ibus_sunpinyin_engine_get_type    (void);
+GType   ibus_laipinyin_engine_get_type    (void);
 
-void ibus_sunpinyin_init(IBusBus *bus);
-void ibus_sunpinyin_exit();
+void ibus_laipinyin_init(IBusBus *bus);
+void ibus_laipinyin_exit();
 
 #endif  /* __ENGINE_H__ */
 

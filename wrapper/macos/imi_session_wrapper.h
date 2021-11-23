@@ -69,11 +69,11 @@ struct CSessionConfigStore : private CNonCopyable
     }
 };
 
-class CSunpinyinSessionWrapper : public IConfigurable, private CNonCopyable
+class ClaipinyinSessionWrapper : public IConfigurable, private CNonCopyable
 {
 public:
-     CSunpinyinSessionWrapper (id ic);
-    ~CSunpinyinSessionWrapper ();
+     ClaipinyinSessionWrapper (id ic);
+    ~ClaipinyinSessionWrapper ();
 
     bool isValid () const 
         {return m_pv != NULL;}

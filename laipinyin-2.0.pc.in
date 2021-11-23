@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+exec_prefix=${prefix}
+libdir=@LIBDIR@
+includedir=${exec_prefix}/include/laipinyin-2.0
+
+Name: liblaipinyin
+Description: IME library based on Statistical Language Model
+Version: @VERSION@
+Requires.private: sqlite3
+Libs: -L${libdir} -llaipinyin
+Cflags: @CFLAGS@

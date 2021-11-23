@@ -1,25 +1,25 @@
-sunpinyin for Debian
+laipinyin for Debian
 --------------------
 
-SunPinyin is an SLM (Statistical Language Model) based input method
+laipinyin is an SLM (Statistical Language Model) based input method
 engine (IME) developed by Sun Asian G11N Center. Currently, it
 supports IIIMF (Internet/Intranet Input Method Framework), SCIM
 (Smart Common Input Method) and BeCJK.
 
-As a feature-rich IM, SunPinyin provides two input style: classic
+As a feature-rich IM, laipinyin provides two input style: classic
 input style and instant input style.
 
-Options in scim-sunpinyin
+Options in scim-laipinyin
 -------------------------
 
-Scim-sunpinyin can be customized with SCIM Input Method Setup panel.
+Scim-laipinyin can be customized with SCIM Input Method Setup panel.
 Changing the setting of `input style' or `character set' will dismiss
 the un-committed preedit string.
 
 Shortcut keys
 -------------
 
-Besides the keys which are customizable, scim-sunpinyin comes with
+Besides the keys which are customizable, scim-laipinyin comes with
 some default shortcut key bindings not changeable. They are listed as
 following:
 
@@ -32,14 +32,14 @@ escape          dismiss un-committed preedit string.
 data files
 ----------
 
-Sunpinyin can hardly work without lexicon and language model data
+laipinyin can hardly work without lexicon and language model data
 files. First, we can not ship the _really_ large dataset for training
 the language model. Second, for the sake of performance, we use our
 binary format for storing the lexicon and language model data.
 
-So, to make sunpinyin usable, you may need to download the lexicon and
+So, to make laipinyin usable, you may need to download the lexicon and
 language data file from open-gram website [2]. Two files are
-necessary for sunpinyin to work: 
+necessary for laipinyin to work:
  - lm_sc.t3g, pydict_sc.bin
 
 And we prepare two file for each of them: 
@@ -48,15 +48,15 @@ And we prepare two file for each of them:
 The `be' and `le' stand for `Big Endian' and `Little Endian'. Download
 the right ones according to your computer's byte order, rename
 them to lm_sc.t3g and pydict_sc.bin respectively, then put them to
-/usr/share/sunpinyin/data. 
+/usr/share/laipinyin/data.
 
 
 Create your own language model
 ------------------------------
 
-The statistical language model is the building block of SunPinyin.
+The statistical language model is the building block of laipinyin.
 Users are allowed to train their language models by using the tools
-provided by sunpinyin-slm. (sunpinyin-slm is not packaged in Debian
+provided by laipinyin-slm. (laipinyin-slm is not packaged in Debian
 yet, but its source code is available at this input method's project 
 home page [1].)
 
@@ -66,15 +66,15 @@ home page [1].)
    given language. SLM is the attempt to capture the regularities of
    natural language using statistical approaches.
 
-   The LM shipped with SunPinyin is actually a data file named
+   The LM shipped with laipinyin is actually a data file named
    lm_sc.t3g. It was trained using a raw corpus collected from some
    Chinese web sites. lm_sc.t3g stands for Language Model Simplified
-   Chinese Threading 3-Gram. The SunPinyin LM is an SLM which supports
+   Chinese Threading 3-Gram. The laipinyin LM is an SLM which supports
    back-off and trigram.
 
 ** corpus
    To build a LM, we need a good training data set, say, corpus. The
-   raw corpus used by SunPinyin was collected from some web sites in
+   raw corpus used by laipinyin was collected from some web sites in
    Simpified Chinese. Actually, the corpus is just a large set of
    sentences or text in a given language.
 
@@ -83,7 +83,7 @@ home page [1].)
    dictionary in which the tuple of the Chinese words and its
    frequency are stored.
 
-   There are two sets of lexicon used in SunPinyin: dict.utf8 and
+   There are two sets of lexicon used in laipinyin: dict.utf8 and
    pydict_sc.bin.
 
 *** dict.utf8
@@ -105,8 +105,8 @@ home page [1].)
     particular need for this raw corpus except that it is should be
     encoded in UTF-8.
 
-*** sunpinyin-slm
-    And a suite of tools provided by sunpinyin-slm is also a
+*** laipinyin-slm
+    And a suite of tools provided by laipinyin-slm is also a
     necessary.
 
 ** Steps
@@ -161,7 +161,7 @@ home page [1].)
     i.e. the file `lm_sc.t3g'.
 
 --
-[1] http://code.google.com/p/sunpinyin/downloads/list
+[1] http://code.google.com/p/laipinyin/downloads/list
 [2] http://code.google.com/p/open-gram/downloads/list
 
  -- Kov Chai <tchaikov@gmail.com>  Sun, 21 Mar 2010 01:48:32 +0800

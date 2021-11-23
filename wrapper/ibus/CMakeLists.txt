@@ -1,4 +1,4 @@
-# CMakeLists.txt: cmake config file for ibus-sunpinyin
+# CMakeLists.txt: cmake config file for ibus-laipinyin
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
@@ -7,12 +7,12 @@ if(COMMAND cmake_policy)
 endif(COMMAND cmake_policy)
 
 cmake_minimum_required(VERSION 2.6)
-project(SUNPINYIN)
+project(laipinyin)
 
-set(PACKAGE             ibus-sunpinyin)
+set(PACKAGE             ibus-laipinyin)
 set(GETTEXT_PACKAGE     ${PACKAGE})
 set(PACKAGE_NAME        ${PACKAGE})
-set(PACKAGE_BUGREPORT   "sunpinyin-developers@googlegroups.com")
+set(PACKAGE_BUGREPORT   "laipinyin-developers@googlegroups.com")
 set(PACKAGE_TARNAME     ${PACKAGE})
 set(VERSION             "2.0.2")
 set(PACKAGE_VERSION     ${VERSION})

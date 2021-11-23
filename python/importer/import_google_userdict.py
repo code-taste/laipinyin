@@ -2,7 +2,7 @@
 
 import os, sys
 import codecs
-from importer import import_to_sunpinyin_user_dict
+from importer import import_to_laipinyin_user_dict
 
 def load_google_user_dict (fname):
     result = []
@@ -27,7 +27,7 @@ def main ():
         exit (1)
 
     google_user_dict = load_google_user_dict(sys.argv[1])
-    import_to_sunpinyin_user_dict (google_user_dict)
+    import_to_laipinyin_user_dict (google_user_dict)
 
 if __name__ == "__main__":
     main()

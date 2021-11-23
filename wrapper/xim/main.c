@@ -43,7 +43,7 @@
 #include "ic.h"
 #include "settings.h"
 
-#define XIM_NAME "xsunpinyin"
+#define XIM_NAME "xlaipinyin"
 
 static void
 finalize(void)
@@ -88,7 +88,7 @@ main(int argc, char* argv[])
 
     /* check if the codeset is utf-8 */
     if (strcmp(nl_langinfo(CODESET), "UTF-8") != 0) {
-        fprintf(stderr, "Warning: using codeset %s might cause xsunpinyin unable to trigger.\n", nl_langinfo(CODESET));
+        fprintf(stderr, "Warning: using codeset %s might cause xlaipinyin unable to trigger.\n", nl_langinfo(CODESET));
     }
 
     /* guess the locale */

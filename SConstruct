@@ -112,7 +112,7 @@ headers = [
     'src/pinyin/shuangpin_data.h',
     'src/pinyin/hunpin_seg.h',
     'src/pinyin/datrie_impl.h',
-    'src/sunpinyin.h',
+    'src/laipinyin.h',
     ]
 
 # source of plugin module, it's off by default
@@ -139,7 +139,7 @@ bins = [
     'src/slmpack',
     'src/genpyt',
     'src/getwordfreq',
-    'src/sunpinyin-dictgen',
+    'src/laipinyin-dictgen',
     ]
 
 man1s = [
@@ -178,10 +178,10 @@ AddOption('--rpath', dest='rpath', metavar='DIR',
           help='encode rpath in the executables')
 
 AddOption('--enable-plugins', dest='enable_plugins', action='store_true',
-          default=False, help='enable plugin mechanism at libsunpinyin layer')
+          default=False, help='enable plugin mechanism at liblaipinyin layer')
 
 AddOption('--disable-plugins', dest='enable_plugins', action='store_false',
-          default=False, help='disable plugin mechanism at libsunpinyin layer')
+          default=False, help='disable plugin mechanism at liblaipinyin layer')
 
 
 def PathIsExecutable(key, path, env):
@@ -264,9 +264,9 @@ opts.Save('configure.conf', env)
 bindir = os.path.join(env['PREFIX'], 'bin')
 mandir = os.path.join(env['PREFIX'], 'share/man')
 man1dir = os.path.join(mandir, 'man1')
-docdir = os.path.join(env['PREFIX'], 'share/doc/sunpinyin')
-headersdir = os.path.join(env['PREFIX'], 'include/sunpinyin-2.0')
-datadir = os.path.join(env['DATADIR'], 'sunpinyin')
+docdir = os.path.join(env['PREFIX'], 'share/doc/laipinyin')
+headersdir = os.path.join(env['PREFIX'], 'include/laipinyin-2.0')
+datadir = os.path.join(env['DATADIR'], 'laipinyin')
 libdir = env['LIBDIR']
 
 # pass through environmental variables
@@ -288,7 +288,7 @@ if env['ENABLE_PLUGINS']:
 
 # merge some of critical compile flags
 env.MergeFlags(['-pipe -DHAVE_CONFIG_H',
-                '-DSUNPINYIN_DATA_DIR=\\\'\\"%s\\"\\\'' % datadir])
+                '-Dlaipinyin_DATA_DIR=\\\'\\"%s\\"\\\'' % datadir])
 
 if GetOption('rpath') is not None and GetOS() != 'Darwin':
     env.MergeFlags('-Wl,-R -Wl,%s' % GetOption('rpath'))
@@ -381,7 +381,7 @@ def DoConfigure():
         conf.Define('ENABLE_PLUGINS')
 
     conf.Define('ENABLE_NLS', 1)
-    conf.Define('GETTEXT_PACKAGE', '"sunpinyin2"')
+    conf.Define('GETTEXT_PACKAGE', '"laipinyin2"')
     conf.CheckCHeader('assert.h')
     conf.CheckFunc('bind_textdomain_codeset')
     conf.CheckFunc('dcgettext')
@@ -411,10 +411,10 @@ def DoConfigure():
     conf.CheckCHeader('wchar.h')
 
     # add essential package requirements
-    conf.Define('PACKAGE', '"sunpinyin"')
-    conf.Define('PACKAGE_NAME', '"sunpinyin"')
-    conf.Define('PACKAGE_STRING', '"sunpinyin 2.0"')
-    conf.Define('PACKAGE_TARNAME', '"sunpinyin"')
+    conf.Define('PACKAGE', '"laipinyin"')
+    conf.Define('PACKAGE_NAME', '"laipinyin"')
+    conf.Define('PACKAGE_STRING', '"laipinyin 2.0"')
+    conf.Define('PACKAGE_TARNAME', '"laipinyin"')
     conf.Define('PACKAGE_VERSION', '"2.0"')
     conf.Define('VRESION', '"2.0"')
 
@@ -439,14 +439,14 @@ env.Command('src/pinyin/pinyin_info.h', 'python/pinyin_info_gen.py',
 
 SConscript(['src/SConscript', 'man/SConscript', 'doc/SConscript'], exports='env')
 
-env.Substfile('sunpinyin-2.0.pc.in', SUBST_DICT={
+env.Substfile('laipinyin-2.0.pc.in', SUBST_DICT={
     '@PREFIX@': env['PREFIX'],
     '@LIBDIR@': env['LIBDIR'],
     '@VERSION@': version,
     '@CFLAGS@': ' '.join(['-I$${includedir}' + x[3:] for x in sorted(allinc())]),
 })
 
-libname_default = '%ssunpinyin%s' % (env.subst('${SHLIBPREFIX}'),
+libname_default = '%slaipinyin%s' % (env.subst('${SHLIBPREFIX}'),
                                      env.subst('${SHLIBSUFFIX}'))
 libname_link = libname_default
 libname_soname = '%s.%d' % (libname_link, abi_major)
@@ -458,7 +458,7 @@ if GetOS() != 'Darwin':
                             parse_flags='-Wl,-soname=%s' % libname_soname)
 else:
     # TODO: add install_name on Darwin?
-    lib = env.SharedLibrary('sunpinyin', source=imesource)
+    lib = env.SharedLibrary('laipinyin', source=imesource)
 
 
 def DoInstall():
@@ -478,7 +478,7 @@ def DoInstall():
             ]
 
     lib_pkgconfig_target = env.Install(os.path.join(libdir, 'pkgconfig'),
-                                       ['sunpinyin-2.0.pc'])
+                                       ['laipinyin-2.0.pc'])
     bin_target = env.Install(bindir, bins)
     man1_target = env.Install(man1dir, man1s)
     doc_target = env.Install(docdir, docs)

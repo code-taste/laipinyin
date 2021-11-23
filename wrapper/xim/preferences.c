@@ -48,7 +48,7 @@
 #include "settings.h"
 #include "xmisc.h"
 
-#define UI_FILE SUNPINYIN_XIM_SETTING_DIR"/settings_ui.xml"
+#define UI_FILE LAIPINYIN_XIM_SETTING_DIR"/settings_ui.xml"
 
 static GtkWidget* main_wnd = NULL;
 static GtkToggleButton* trigger_ctrl_check = NULL;
@@ -141,8 +141,8 @@ fill_skin_list(const char* dirpath, varchar names[], int idx)
     return idx;
 }
 
-#define SYSTEM_SKIN_DIR SUNPINYIN_XIM_SETTING_DIR"/skins"
-#define USER_SKIN_DIR "%s/.sunpinyin/xim_skins"
+#define SYSTEM_SKIN_DIR laipinyin_XIM_SETTING_DIR"/skins"
+#define USER_SKIN_DIR "%s/.laipinyin/xim_skins"
 #define MAX_SKINS 256
 
 static int
@@ -336,9 +336,9 @@ init(void)
 static void
 send_reload()
 {
-    /* notify all running xsunpinyin with this user */
+    /* notify all running xlaipinyin with this user */
     char cmd[256];
-    snprintf(cmd, 256, "/usr/bin/pkill -10 '^xsunpinyin$' -u %d", getuid());
+    snprintf(cmd, 256, "/usr/bin/pkill -10 '^xlaipinyin$' -u %d", getuid());
     system(cmd);
 }
 

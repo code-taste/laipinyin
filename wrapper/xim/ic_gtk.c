@@ -47,13 +47,13 @@ static GtkWidget* icbar_chn_punc_btn;
 static GtkStatusIcon* icbar_tray;
 static GtkWidget* popup_menu;
 
-#define LOGO_FILE SUNPINYIN_XIM_ICON_DIR"/sunpinyin-logo.png"
-#define ENG_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/eng.png"
-#define HAN_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/han.png"
-#define FULL_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/full.png"
-#define HALF_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/half.png"
-#define CHN_PUNC_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/chnpunc.png"
-#define ENG_PUNC_ICON_PNG SUNPINYIN_XIM_ICON_DIR"/engpunc.png"
+#define LOGO_FILE LAIPINYIN_XIM_ICON_DIR"/laipinyin-logo.png"
+#define ENG_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/eng.png"
+#define HAN_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/han.png"
+#define FULL_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/full.png"
+#define HALF_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/half.png"
+#define CHN_PUNC_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/chnpunc.png"
+#define ENG_PUNC_ICON_PNG LAIPINYIN_XIM_ICON_DIR"/engpunc.png"
 
 
 static void

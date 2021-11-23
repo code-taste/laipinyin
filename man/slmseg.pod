@@ -17,7 +17,7 @@ B<slmseg> is a tool for segmenting Chinese text into words using maximum matchin
 
 =item B<-d> I<dict_file>
 
-Use I<dict_file> as lexicon. A default lexicon can be found at F</usr/share/sunpinyin-slm/dict.utf8>.
+Use I<dict_file> as lexicon. A default lexicon can be found at F</usr/share/laipinyin-slm/dict.utf8>.
 
 
 =item B<-f>,B<--format> (B<text>|B<bin>)

@@ -35,8 +35,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef SUNPINYIN_IMI_GTK_WIN_H
-#define SUNPINYIN_IMI_GTK_WIN_H
+#ifndef laipinyin_IMI_GTK_WIN_H
+#define laipinyin_IMI_GTK_WIN_H
 
 #include "portability.h"
 

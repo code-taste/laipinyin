@@ -327,8 +327,8 @@ settings_destroy()
     }
 }
 
-#define SETTING_FILE ".sunpinyin/xim_config"
-#define DEFAULT_SETTING_FILE SUNPINYIN_XIM_SETTING_DIR"/xim_config_default"
+#define SETTING_FILE ".laipinyin/xim_config"
+#define DEFAULT_SETTING_FILE LAIPINYIN_XIM_SETTING_DIR"/xim_config_default"
 
 void
 settings_load()
@@ -339,7 +339,7 @@ settings_load()
     FILE *fp = fopen(path, "r");
     if (fp == NULL) {
         char config_dir[256];
-        snprintf(config_dir, 256, "%s/.sunpinyin", getenv("HOME"));
+        snprintf(config_dir, 256, "%s/.laipinyin", getenv("HOME"));
         mkdir(config_dir, S_IRWXU);
         settings_save();
         if ((fp = fopen(path, "r")) == NULL)

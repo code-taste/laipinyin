@@ -49,7 +49,7 @@ ShowUsage(const char* progname)
     printf("\n");
     printf("Description:\n");
     printf(
-        "    %s converts the binary language model files used by SunPinyin from big-endian to small-endian or vice versa.\n",
+        "    %s converts the binary language model files used by laipinyin from big-endian to small-endian or vice versa.\n",
         progname);
     printf("\nOptions:\n");
     printf(

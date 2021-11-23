@@ -34,7 +34,7 @@
  */
 
 /*
- * pack ARPA format to a binary format which can be consumed by SunPinyin
+ * pack ARPA format to a binary format which can be consumed by laipinyin
  */
 
 #ifdef HAVE_CONFIG_H

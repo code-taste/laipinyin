@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>SunPinyin</string>
+	<string>laipinyin</string>
 	<key>CFBundleIconFile</key>
-	<string>SunPinyin.icns</string>
+	<string>laipinyin.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>${PRODUCT_BUNDLE_IDENTIFIER}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -21,11 +21,11 @@
 	<key>CFBundleVersion</key>
 	<string>2.0.4.1020</string>
 	<key>InputMethodConnectionName</key>
-	<string>SunPinyin_1_Connection</string>
+	<string>laipinyin_1_Connection</string>
 	<key>InputMethodServerControllerClass</key>
-	<string>SunPinyinController</string>
+	<string>laipinyinController</string>
 	<key>InputMethodServerDelegateClass</key>
-	<string>SunPinyinController</string>
+	<string>laipinyinController</string>
 	<key>LSBackgroundOnly</key>
 	<string>0</string>
 	<key>LSUIElement</key>
@@ -35,7 +35,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://release.sunpinyin.googlecode.com/git/SunpinyinAppcast.xml</string>
+	<string>http://release.laipinyin.googlecode.com/git/laipinyinAppcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUScheduledCheckInterval</key>
@@ -45,6 +45,6 @@
 		<string>Hans</string>
 	</array>
 	<key>tsInputMethodIconFileKey</key>
-	<string>SunPinyin.icns</string>
+	<string>laipinyin.icns</string>
 </dict>
 </plist>

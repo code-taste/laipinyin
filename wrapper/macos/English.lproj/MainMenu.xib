@@ -13,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <customObject id="252" userLabel="SunPinyinApplicationDelegate" customClass="SunPinyinApplicationDelegate">
+        <customObject id="252" userLabel="laipinyinApplicationDelegate" customClass="laipinyinApplicationDelegate">
             <connections>
                 <outlet property="_candiWin" destination="273" id="275"/>
                 <outlet property="_ftTxtField" destination="304" id="437"/>
@@ -864,7 +864,7 @@
                                                 <font key="font" metaFont="system"/>
                                                 <string key="title">Version 2.0.2.1008
 
-Copyright © 2010 SunPinyin.ORG
+Copyright © 2010 laipinyin.ORG
 Sun Microsystems, Inc.
 Lei Zhang &lt;phill.zhang@gmail.com&gt;
 Yong Sun &lt;mail@yongsun.me&gt;

@@ -38,12 +38,12 @@
 #include <algorithm>
 #include <ime-core/imi_uiobjects.h>
 
-#include "sunpinyin_engine.h"
+#include "laipinyin_engine.h"
 #include "imi_ibus_win.h"
 
 
 
-CIBusWinHandler::CIBusWinHandler(SunPinyinEngine* engine)
+CIBusWinHandler::CIBusWinHandler(laipinyinEngine* engine)
   : m_engine(engine)
 {
     //

@@ -1,6 +1,6 @@
-ibus-sunpinyin
+ibus-laipinyin
 ===
 
-ibus-sunpinyin is a wrapper around SunPinyin which enables user to use
-SunPinyin with IBus framework. 
+ibus-laipinyin is a wrapper around laipinyin which enables user to use
+laipinyin with IBus framework.
 

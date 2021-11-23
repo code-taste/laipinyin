@@ -35,7 +35,7 @@ Specify language model file.
 
 =item B<-l> I<lexicon>
 
-Specify the lexicon file. A default lexicon could be found at F</usr/share/sunpinyin-slm/dict.utf8>.
+Specify the lexicon file. A default lexicon could be found at F</usr/share/laipinyin-slm/dict.utf8>.
 
 =back
 

@@ -33,48 +33,48 @@
  * to such option by the copyright holder. 
  */
 
-#include "sunpinyin_engine_proxy.h"
-#include "sunpinyin_engine.h"
-#include "sunpinyin_config.h"
+#include "laipinyin_engine_proxy.h"
+#include "laipinyin_engine.h"
+#include "laipinyin_config.h"
 #include "engine.h"
 
 
-#define IBUS_SUNPINYIN_ENGINE_CLASS(klass)     \
-    (G_TYPE_CHECK_CLASS_CAST ((klass), IBUS_TYPE_SUNPINYIN_ENGINE, IBusSunPinyinEngineClass))
-#define IBUS_SUNPINYIN_ENGINE_GET_CLASS(obj)   \
-    (G_TYPE_INSTANCE_GET_CLASS ((obj), IBUS_TYPE_SUNPINYIN_ENGINE, IBusSunPinyinEngineClass))
+#define IBUS_laipinyin_ENGINE_CLASS(klass)     \
+    (G_TYPE_CHECK_CLASS_CAST ((klass), IBUS_TYPE_laipinyin_ENGINE, IBuslaipinyinEngineClass))
+#define IBUS_laipinyin_ENGINE_GET_CLASS(obj)   \
+    (G_TYPE_INSTANCE_GET_CLASS ((obj), IBUS_TYPE_laipinyin_ENGINE, IBuslaipinyinEngineClass))
 
-struct IBusSunPinyinEngineClass {
+struct IBuslaipinyinEngineClass {
     IBusEngineClass parent;
 };
 
-typedef SunPinyinEngine IBusSunPinyinEngine;
+typedef laipinyinEngine IBuslaipinyinEngine;
 
 /* functions prototype */
-static void ibus_sunpinyin_engine_class_init (IBusSunPinyinEngineClass *);
+static void ibus_laipinyin_engine_class_init (IBuslaipinyinEngineClass *);
 
 IBusEngineClass *parent_class = NULL;
 
 GType
-ibus_sunpinyin_engine_get_type (void)
+ibus_laipinyin_engine_get_type (void)
 {
     static GType type = 0;
 
     static const GTypeInfo type_info = {
-        sizeof (IBusSunPinyinEngineClass),
+        sizeof (IBuslaipinyinEngineClass),
         (GBaseInitFunc)     NULL,
         (GBaseFinalizeFunc) NULL,
-        (GClassInitFunc)    ibus_sunpinyin_engine_class_init,
+        (GClassInitFunc)    ibus_laipinyin_engine_class_init,
         NULL,
         NULL,
-        sizeof (IBusSunPinyinEngine),
+        sizeof (IBuslaipinyinEngine),
         0,
-        (GInstanceInitFunc) ibus_sunpinyin_engine_init,
+        (GInstanceInitFunc) ibus_laipinyin_engine_init,
     };
 
     if (type == 0) {
         type = g_type_register_static (IBUS_TYPE_ENGINE,
-                                       "IBusSunPinyinEngine",
+                                       "IBuslaipinyinEngine",
                                        &type_info,
                                        (GTypeFlags) 0);
     }
@@ -84,27 +84,27 @@ ibus_sunpinyin_engine_get_type (void)
 
 // initialize the meta class object
 void
-ibus_sunpinyin_engine_class_init (IBusSunPinyinEngineClass *klass)
+ibus_laipinyin_engine_class_init (IBuslaipinyinEngineClass *klass)
 {
     IBusObjectClass *ibus_object_class = IBUS_OBJECT_CLASS (klass);
     IBusEngineClass *engine_class = IBUS_ENGINE_CLASS (klass);
     
     parent_class = (IBusEngineClass *) g_type_class_peek_parent (klass);
     
-    ibus_object_class->destroy = (IBusObjectDestroyFunc) ibus_sunpinyin_engine_destroy;
+    ibus_object_class->destroy = (IBusObjectDestroyFunc) ibus_laipinyin_engine_destroy;
     
-    engine_class->process_key_event = ibus_sunpinyin_engine_process_key_event;
-    engine_class->focus_in          = ibus_sunpinyin_engine_focus_in;
-    engine_class->focus_out         = ibus_sunpinyin_engine_focus_out;
-    engine_class->reset             = ibus_sunpinyin_engine_reset;
-    engine_class->enable            = ibus_sunpinyin_engine_enable;
-    engine_class->disable           = ibus_sunpinyin_engine_disable;
-    engine_class->page_up           = ibus_sunpinyin_engine_page_up;
-    engine_class->page_down         = ibus_sunpinyin_engine_page_down;
-    engine_class->cursor_up         = ibus_sunpinyin_engine_cursor_up;
-    engine_class->cursor_down       = ibus_sunpinyin_engine_cursor_down;
-    engine_class->property_activate = ibus_sunpinyin_engine_property_activate;
-    engine_class->candidate_clicked = ibus_sunpinyin_engine_candidate_clicked;
+    engine_class->process_key_event = ibus_laipinyin_engine_process_key_event;
+    engine_class->focus_in          = ibus_laipinyin_engine_focus_in;
+    engine_class->focus_out         = ibus_laipinyin_engine_focus_out;
+    engine_class->reset             = ibus_laipinyin_engine_reset;
+    engine_class->enable            = ibus_laipinyin_engine_enable;
+    engine_class->disable           = ibus_laipinyin_engine_disable;
+    engine_class->page_up           = ibus_laipinyin_engine_page_up;
+    engine_class->page_down         = ibus_laipinyin_engine_page_down;
+    engine_class->cursor_up         = ibus_laipinyin_engine_cursor_up;
+    engine_class->cursor_down       = ibus_laipinyin_engine_cursor_down;
+    engine_class->property_activate = ibus_laipinyin_engine_property_activate;
+    engine_class->candidate_clicked = ibus_laipinyin_engine_candidate_clicked;
 }
 
 // -*- indent-tabs-mode: nil -*- vim:et:ts=4

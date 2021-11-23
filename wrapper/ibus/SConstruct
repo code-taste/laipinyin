@@ -5,11 +5,11 @@ sources = ['src/debug.cpp',
            'src/ibus_portable.cpp',
            'src/imi_ibus_win.cpp',
            'src/main.cpp',
-           'src/sunpinyin_config.cpp',
-           'src/sunpinyin_engine.cpp',
-           'src/sunpinyin_engine_proxy.cpp',
-           'src/sunpinyin_lookup_table.cpp',
-           'src/sunpinyin_property.cpp']
+           'src/laipinyin_config.cpp',
+           'src/laipinyin_engine.cpp',
+           'src/laipinyin_engine_proxy.cpp',
+           'src/laipinyin_lookup_table.cpp',
+           'src/laipinyin_property.cpp']
 
 locales = ['zh_CN']
 
@@ -69,13 +69,13 @@ envvar = [('CC', 'CC'),
           ('LDFLAGS', 'LINKFLAGS')]
 PassVariables(envvar, env)
 
-data_dir = env['DATADIR'] + '/ibus-sunpinyin'
-icons_dir = env['DATADIR'] + '/ibus-sunpinyin/icons'
-bin_dir = env['LIBEXECDIR'] + '/ibus-sunpinyin'
-gettext_package = 'ibus-sunpinyin'
+data_dir = env['DATADIR'] + '/ibus-laipinyin'
+icons_dir = env['DATADIR'] + '/ibus-laipinyin/icons'
+bin_dir = env['LIBEXECDIR'] + '/ibus-laipinyin'
+gettext_package = 'ibus-laipinyin'
 
-extra_cflags = ' -DIBUS_SUNPINYIN_LOCALEDIR=\'"%s"\'' % (env['DATADIR'] + '/locale')
-extra_cflags += ' -DIBUS_SUNPINYIN_ICON_DIR=\'"%s"\'' % icons_dir
+extra_cflags = ' -DIBUS_laipinyin_LOCALEDIR=\'"%s"\'' % (env['DATADIR'] + '/locale')
+extra_cflags += ' -DIBUS_laipinyin_ICON_DIR=\'"%s"\'' % icons_dir
 extra_cflags += ' -DLIBEXECDIR=\'"%s"\'' % bin_dir
 extra_cflags += ' -DGETTEXT_PACKAGE=\'"%s"\'' % gettext_package
 
@@ -113,14 +113,14 @@ def DoConfigure():
     if not conf.CheckPKG('ibus-1.0'):
         Exit(1)
 
-    if not conf.CheckPKG('sunpinyin-2.0'):
+    if not conf.CheckPKG('laipinyin-2.0'):
         Exit(1)
     env = conf.Finish()
-    env.ParseConfig('pkg-config ibus-1.0 sunpinyin-2.0 --libs --cflags')
+    env.ParseConfig('pkg-config ibus-1.0 laipinyin-2.0 --libs --cflags')
 
 DoConfigure()
 
-env.Program('ibus-engine-sunpinyin', source=sources)
+env.Program('ibus-engine-laipinyin', source=sources)
 for locale in locales:
     mo = 'po/%s.mo' % (locale,)
     env.Command(mo, [], 'msgfmt po/%s.po -o %s' % (locale, mo))
@@ -130,16 +130,16 @@ sub = {'@LIBEXEC_DIR@': bin_dir,
        '@ICON_DIR@': icons_dir,
        '@VERSION@' : version,
        '@INSTALL_PREFIX@': env['PREFIX']}
-env.Substfile('data/sunpinyin.xml.in', SUBST_DICT=sub)
+env.Substfile('data/laipinyin.xml.in', SUBST_DICT=sub)
 env.Substfile('setup/config.py.in', SUBST_DICT=sub)
-env.Substfile('setup/ibus-setup-sunpinyin.in', SUBST_DICT=sub)
+env.Substfile('setup/ibus-setup-laipinyin.in', SUBST_DICT=sub)
 
 #
 #==============================install================================
 #
 def DoInstall():
-    libexec_target = env.Install(bin_dir, ['ibus-engine-sunpinyin', 
-                                           'setup/ibus-setup-sunpinyin'])
+    libexec_target = env.Install(bin_dir, ['ibus-engine-laipinyin',
+                                           'setup/ibus-setup-laipinyin'])
     for exec_bin in libexec_target:
         env.AddPostAction(exec_bin, Chmod(str(exec_bin), 0o755))
         
@@ -155,9 +155,9 @@ def DoInstall():
                                 'icons/halfwidth.svg',
                                 'icons/han.svg',
                                 'icons/setup.svg',
-                                'icons/sunpinyin-logo.png'])
+                                'icons/laipinyin-logo.png'])
     component_target = env.Install(env['DATADIR'] + '/ibus/component',
-                                   'data/sunpinyin.xml')
+                                   'data/laipinyin.xml')
     locale_targets = []
     for locale in locales:
         path = env['DATADIR'] + '/locale/%s/LC_MESSAGES/%s.mo' % \

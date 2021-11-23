@@ -2,7 +2,7 @@ include(Gettext)
 
 set(POT_SRCS
     ../src/main.cpp
-    ../src/sunpinyin_property.cpp
+    ../src/laipinyin_property.cpp
     ../setup/setup.glade)
 set(LANGS zh_CN)
 set(POT_FILE ${CMAKE_CURRENT_BINARY_DIR}/${GETTEXT_PACKAGE}.pot)

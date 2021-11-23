@@ -36,8 +36,8 @@
  * to such option by the copyright holder.
  */
 
-#ifndef SUNPINYIN_KEYSDEFINE_H
-#define SUNPINYIN_KEYSDEFINE_H
+#ifndef laipinyin_KEYSDEFINE_H
+#define laipinyin_KEYSDEFINE_H
 
 #include "portability.h"
 

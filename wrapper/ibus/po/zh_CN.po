@@ -1,11 +1,11 @@
-# SunPinyin
+# laipinyin
 # Copyright (C) 2007,2009,2010 Kov Chai <tchaikov@gmail.com>
-# This file is distributed under the same license as the sunpinyin package.
+# This file is distributed under the same license as the laipinyin package.
 # Kov Chai <tchaikov@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: sunpinyin 2.0\n"
+"Project-Id-Version: laipinyin 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-07-23 00:07+0800\n"
 "PO-Revision-Date: 2010-02-18 20:18+0800\n"
@@ -154,7 +154,7 @@ msgstr "全不选"
 msgid "Pinyin Mode"
 msgstr "拼音模式"
 
-#: src/sunpinyin_property.cpp:167
+#: src/laipinyin_property.cpp:167
 msgid "Preference"
 msgstr "设置"
 
@@ -183,30 +183,30 @@ msgid "Smart Segmentation"
 msgstr "智能切分"
 
 #: setup/setup.glade:7
-msgid "SunPinyin Setup"
-msgstr "SunPinyin 配置"
+msgid "laipinyin Setup"
+msgstr "laipinyin 配置"
 
-#: src/sunpinyin_property.cpp:62
+#: src/laipinyin_property.cpp:62
 msgid "Switch to Chinese input mode"
 msgstr "切换到中文输入模式"
 
-#: src/sunpinyin_property.cpp:91
+#: src/laipinyin_property.cpp:91
 msgid "Switch to Chinese punctuation"
 msgstr "使用中文标点"
 
-#: src/sunpinyin_property.cpp:65
+#: src/laipinyin_property.cpp:65
 msgid "Switch to English input mode"
 msgstr "切换到英文输入模式"
 
-#: src/sunpinyin_property.cpp:94
+#: src/laipinyin_property.cpp:94
 msgid "Switch to English punctuation"
 msgstr "使用英文标点"
 
-#: src/sunpinyin_property.cpp:77
+#: src/laipinyin_property.cpp:77
 msgid "Switch to full-width letter input mode"
 msgstr "切换到全角输入模式"
 
-#: src/sunpinyin_property.cpp:80
+#: src/laipinyin_property.cpp:80
 msgid "Switch to half-width letter input mode"
 msgstr "切换到半角输入模式"
 

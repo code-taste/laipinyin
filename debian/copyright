@@ -1,6 +1,6 @@
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Name: SunPinyin
-Source: http://sunpinyin.googlecode.com/
+Name: laipinyin
+Source: http://laipinyin.googlecode.com/
 Maintainer: Yong Sun <mail@yongsun.me>
 
 Files: *
@@ -18,7 +18,7 @@ Copyright: 2009, Kefu Chai <tchaikov@gmail.com>,
            2009, Leo Zhang <zym361@gmail.com>
 License: LGPL-2.1 or CDDL
 
-Files: wrapper/ibus/data/sunpinyin-logo.png
+Files: wrapper/ibus/data/laipinyin-logo.png
 Copyright: 2009, chumsdock <vorbei@gmail.com>
 License: LGPL-2.1 or CDDL
 
